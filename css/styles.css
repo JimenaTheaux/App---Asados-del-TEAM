@@ -1,0 +1,320 @@
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--gradient-main);
+  color: var(--text-light);
+}
+
+main {
+  padding: 20px;
+  display: grid;
+  gap: 28px;
+}
+
+
+:root {
+  --primary: #8C4A2F;
+  --primary-dark: #6F3A24;
+  --bg-card: #F7F2ED;
+  --border-soft: #D6C8BC;
+  --text-light: #F7F2ED;
+  --text-dark: #3A2A22;
+  --gradient-main: linear-gradient(
+    135deg,
+    #E6B07E,
+    #C87B4A,
+    #8C4A2F
+  );
+}
+
+.app-header {
+  padding: 28px 20px 22px;
+  text-align: center;
+  background: radial-gradient(
+    circle at top,
+    rgba(140, 74, 47, 0.45),
+    transparent 70%
+  );
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color:beige;
+  letter-spacing: 1px;
+}
+
+/* CARD FORM */
+.card-form {
+  max-width: 520px;
+  margin: auto;
+  background: var(--bg-card);
+  color: #8C4A2F;
+  text-shadow: 0 1px 2px #8C4A2F(0,0,0,.25);
+  padding: 26px;
+  border-radius: 24px;
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.4);
+}
+
+.card-form h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+/* FORM GROUP */
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label,
+.group-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* DATE INPUT */
+.date-wrapper {
+  position: relative;
+  width: 100%; /* ✅ Asegura que ocupe el 100% */
+}
+
+.date-wrapper input {
+  width: 100%;
+  padding: 12px 40px 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box; /* ✅ CRÍTICO: incluye padding en el ancho */
+}
+
+.date-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .6;
+  pointer-events: none; /* ✅ Evita que el ícono interfiera con el click */
+}
+
+/* GRID 3 */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* OPTION BUTTON */
+.option-btn {
+  width: 100%;
+  padding: 10px 6px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: white;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s ease;
+  user-select: none;
+}
+
+.option-btn input {
+  display: none;
+}
+
+.option-btn:hover {
+  background: #EFE6DE;
+}
+
+.option-btn:has(input:checked) {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* SUBMIT */
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+  background: var(--gradient-main);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+  box-shadow: 0 10px 25px rgba(110, 47, 18, 0.45);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(193, 90, 43, .6);
+}
+
+.btn-primary:active {
+  transform: scale(.98);
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+#dashboard-section {
+  margin-top: 10px;
+}
+
+#dashboard-section h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  color: var(--text-light);
+}
+
+/* =========================
+   GRID DASHBOARD
+========================= */
+
+#dashboard-content {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
+}
+
+/* Desktop: limitar ancho máximo de las cards */
+@media (min-width: 768px) {
+  #dashboard-content {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 350px)); /* ✅ Máximo 350px */
+    justify-content: center; /* ✅ Centra el grid */
+  }
+}
+/* =========================
+   CARD BASE
+========================= */
+
+.card {
+  background: var(--bg-card);
+  color: var(--text-dark);
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.5);
+  transition: transform .2s ease, box-shadow .2s ease;
+  overflow: hidden; /* importante para canvas */
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 38px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.5);
+}
+
+/* =========================
+   TITULOS CARD
+========================= */
+
+.card h3 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-align: center;
+  color: var(--primary-dark);
+}
+
+/* =========================
+   CARD DESTACADA (TOTAL)
+========================= */
+
+.card-highlight {
+  background: linear-gradient(
+    135deg,
+    #F2D3B3,
+    #E6B07E
+  );
+  color: #3A2A22;
+  text-align: center;
+}
+
+.card-highlight h3 {
+  color: #6F3A24;
+  margin-bottom: 8px;
+}
+
+.card-highlight p {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/* =========================
+   WRAPPER DE GRÁFICOS
+========================= */
+/* Canvas específico para gráfico de participación */
+#chart-participacion {
+  min-height: 320px !important;
+  height: auto !important;
+}
+
+#chart-cortes {
+  min-height: 200px !important;
+  height: auto !important;
+}
+
+#chart-asados-fecha {
+  min-height: 260px !important;
+  height: auto !important;
+}
+
+/* Para móviles, ajustar altura */
+@media (max-width: 480px) {
+  #chart-participacion {
+    min-height: 280px !important;
+  }
+}
+
+.chart-wrapper {
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(242, 211, 179, 0.08);  /* ✅ Beige muy suave */
+}
+
+
+/* =========================
+   CANVAS (Chart.js)
+========================= */
+
+.card canvas {
+  width: 100% !important;
+  height: 260px !important;
+  display: block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+  .card canvas {
+    height: 220px !important;
+  }
+
+  .card-highlight p {
+    font-size: 34px;
+  }
+}

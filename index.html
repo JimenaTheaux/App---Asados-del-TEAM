@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asados del TEAM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="app-header">
+  <h1>Asados del TEAM</h1>
+</header>
+
+  <main>
+   <!-- FORMULARIO -->
+<section id="form-section" class="card-form">
+  <h2>Nuevo asado</h2>
+
+  <form id="asado-form">
+
+    <!-- FECHA -->
+    <div class="form-group">
+      <label for="fecha">Fecha</label>
+      <div class="date-wrapper">
+        <input type="date" id="fecha" name="fecha" required>
+      </div>
+    </div>
+
+    <!-- CORTES -->
+    <div class="form-group">
+      <p class="group-title">Cortes</p>
+      <div class="grid-3">
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Cuadrilcito">Cuadrilcito</label>
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Ponchito">Ponchito</label>
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Costillita">Costillita</label>
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Chinchu">Chinchu</label>
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Matambrito">Matambrito</label>
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Mollejita">Mollejita</label>
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Bife de chorizo">Bife</label>
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Otros">Otros</label>
+      </div>
+    </div>
+
+    <!-- PARTICIPANTES -->
+    <div class="form-group">
+      <p class="group-title">Participantes</p>
+      <div class="grid-3">
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Loli">Loli</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Sofi">Sofi</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Agus">Agus</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Jime">Jime</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Maria M">Maria M</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Maria C">Maria C</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Vale">Vale</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Luli">Luli</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Cata">Cata</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Magda">Magda</label>
+        <label class="option-btn"><input type="checkbox" name="participantes" value="Ceci">Ceci</label>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-primary">Guardar registro</button>
+  </form>
+</section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard-section">
+      <h2>DASHBOARD</h2>
+
+      <div id="dashboard-content">
+          <!-- métricas -->
+
+  <div class="card card-highlight">
+  <h3>CANTIDAD DE ASADOS</h3>
+  <p id="total-asados">0</p>
+</div>
+
+<div class="card">
+  <h3>PARTICIPACIÓN</h3>
+  <div class="chart-wrapper">
+    <canvas id="chart-participacion"></canvas>
+  </div>
+</div>
+
+<div class="card">
+  <h3>TOP CORTES</h3>
+  <div class="chart-wrapper">
+    <canvas id="chart-cortes"></canvas>
+  </div>
+</div>
+
+<div class="card">
+  <h3>ASADOS POR MES</h3>
+  <div class="chart-wrapper">
+    <canvas id="chart-asados-fecha"></canvas>
+  </div>
+</div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Plugin para etiquetas en las barras -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<!-- JS principal -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
