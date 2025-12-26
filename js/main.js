@@ -15,6 +15,16 @@ function formatearMes(fecha) {
   });
 }
 
+function mostrarPopupSuccess() {
+  const popup = document.getElementById("popup-success");
+  popup.classList.remove("hidden");
+
+  setTimeout(() => {
+    popup.classList.add("hidden");
+  }, 2000); // 2 segundos visible
+}
+
+
 // =============================
 // FORMULARIO
 // =============================
@@ -44,16 +54,23 @@ form.addEventListener("submit", function (event) {
     participantes: participantesSeleccionados.join(", ")
   });
 
-  fetch(`https://script.google.com/macros/s/AKfycbwYKVgtmgApcd3X57J9uapCGSYjxUz9CzPYaSlO5Luqmi1hcznKdC_ZBP2-VMGqes7x/exec?${params}`)
-    .then(r => r.json())
-    .then(data => {
-      if (data.success) {
-        form.reset();
-        cargarDashboard();
-      }
-    })
-    .catch(err => console.error(err));
+ fetch(`https://script.google.com/macros/s/AKfycbwYKVgtmgApcd3X57J9uapCGSYjxUz9CzPYaSlO5Luqmi1hcznKdC_ZBP2-VMGqes7x/exec?${params}`)
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      mostrarPopupSuccess();   // 👈 POPUP
+      form.reset();            // limpia formulario
+      cargarDashboard();       // refresca métricas
+    } else {
+      alert("Error al guardar el asado");
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Error de conexión");
+  });
 });
+
 
 // =============================
 // DASHBOARD

@@ -11,6 +11,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  
 </head>
 <body>
 
@@ -20,7 +21,8 @@
 
   <main>
    <!-- FORMULARIO -->
-<section id="form-section" class="card-form">
+<section id="form-section" 
+         <div class="card-form">
   <h2>Nuevo asado</h2>
 
   <form id="asado-form">
@@ -43,7 +45,7 @@
         <label class="option-btn"><input type="checkbox" name="cortes" value="Chinchu">Chinchu</label>
         <label class="option-btn"><input type="checkbox" name="cortes" value="Matambrito">Matambrito</label>
         <label class="option-btn"><input type="checkbox" name="cortes" value="Mollejita">Mollejita</label>
-        <label class="option-btn"><input type="checkbox" name="cortes" value="Bife de chorizo">Bife</label>
+        <label class="option-btn"><input type="checkbox" name="cortes" value="Bife de chorizo">Bife de chorizo</label>
         <label class="option-btn"><input type="checkbox" name="cortes" value="Otros">Otros</label>
       </div>
     </div>
@@ -106,6 +108,15 @@
       </div>
     </section>
   </main>
+  
+  <!-- POPUP SUCCESS -->
+<div id="popup-success" class="popup hidden">
+  <div class="popup-card">
+    <span class="popup-icon">🔥</span>
+    <p>Registro correcto</p>
+  </div>
+</div>
+
 
   <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -118,4 +129,3 @@
 
 </body>
 </html>
-
